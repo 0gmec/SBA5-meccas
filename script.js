@@ -1,9 +1,10 @@
-const container = document.querySelector(".container")
-const bppForm = document.getElementById("bppForm")
-const postTitle = document.getElementById("postTitle")
-const postContent = document.getElementById("postContent")
-const errorMessage =  document.querySelectorAll(".errorMessage")
-const displayPost = document.getElementById("displayPost")
+const container = document.querySelector(".container");
+const bppForm = document.getElementById("bppForm");
+const postTitle = document.getElementById("postTitle");
+const postContent = document.getElementById("postContent");
+const postTitleError =  document.getElementById("postTtileError");
+const postContentError = document.getElementById("postContentErrror");
+const displayPost = document.getElementById("displayPost");
 
 let post = []
 
