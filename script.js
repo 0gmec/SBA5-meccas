@@ -5,4 +5,18 @@ const postContent = document.getElementById("postContent")
 const errorMessage =  document.querySelectorAll(".errorMessage")
 const displayPost = document.getElementById("displayPost")
 
+let post = []
 
+function display() {
+    const input = document.getElementById("postTitle");
+    localStorage.setItem("postTitle", input.value);
+
+}
+function display() {
+    const input = document.getElementById("postContent");
+    localStorage.setItem("postContent", input.value);
+}
+
+bppForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+})

@@ -12,10 +12,40 @@ body {
 
 .container {
     background-color: #1a1a1a;
-    margin: 30px auto;
+    margin: 50px auto;
     padding: 20px;
     max-width: 700px;
     border-radius: 8px;
     box-shadow: 0 0 15px #004d00;
     
 }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #00cc68
+
+}
+
+button {
+    background-color: #00cc66;
+    color: black;
+    margin: 2px 5px;
+    padding: 5px 10px;
+    border: none;
+    font-family: 'Bungee', cursive;
+    border-radius: 5px;
+
+}
+
+button:hover {
+    background-color: #00994d;
+}
+
+.error-messeage {
+    color:red;
+
+}
+
