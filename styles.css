@@ -1,0 +1,21 @@
+/* Anime font style*/
+
+@import url('https://fonts.googleapis.com/css2familty=Bungee&display=swap');
+
+body {
+    background-color: #0d0d0d;
+    color: #b2ffb2;
+    font-family: 'Bungee', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #1a1a1a;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #004d00;
+    
+}
