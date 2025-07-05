@@ -18,15 +18,16 @@ function display() {
 }
 
 function renderPost() {
-    const displayPost = getElementById("displayPost");
+    const displayPost = document.getElementById("displayPost");
     displayPost.innerHTML = "";
     
-    const postTitle = getElementById("postTitle");
-    postTitle.innerHTML = "";
+    const postTitle = document.getElementById("postTitle");
+    postTitle.value = "";
 
-    const postContent = getElementById("postContent");
+    const postContent = document.getElementById("postContent");
     postContent.innerHTML = "";
 }
+
 
 bppForm.addEventListener("submit", function (event) {
     event.preventDefault();
