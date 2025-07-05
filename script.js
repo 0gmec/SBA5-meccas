@@ -17,6 +17,10 @@ function display() {
     localStorage.setItem("postContent", input.value);
 }
 
+function renderPost() {
+    
+}
+
 bppForm.addEventListener("submit", function (event) {
     event.preventDefault();
 })
