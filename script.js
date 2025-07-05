@@ -18,7 +18,14 @@ function display() {
 }
 
 function renderPost() {
+    const displayPost = getElementById("displayPost");
+    displayPost.innerHTML = "";
     
+    const postTitle = getElementById("postTitle");
+    postTitle.innerHTML = "";
+
+    const postContent = getElementById("postContent");
+    postContent.innerHTML = "";
 }
 
 bppForm.addEventListener("submit", function (event) {
