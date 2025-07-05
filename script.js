@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const bppForm = document.getElementById("bppForm");
 const postTitle = document.getElementById("postTitle");
 const postContent = document.getElementById("postContent");
-const postTitleError =  document.getElementById("postTitleError");
+const postTitleError = document.getElementById("postTitleError");
 const postContentError = document.getElementById("postContentError");
 const displayPost = document.getElementById("displayPost");
 const editBtn = document.getElementById("editBtn");
@@ -23,7 +23,7 @@ function displayContent() {
 function showPost() {
     const displayPost = document.getElementById("displayPost");
     displayPost.innerHTML = "";
-    
+
     const postTitle = document.getElementById("postTitle");
     postTitle.value = "";
 
@@ -31,28 +31,73 @@ function showPost() {
     postContent.value = "";
 
     const editBtn = document.getElementById("editBtn");
-    editBtn.value = "";
+    
 
     const deleteBtn = document.getElementById("deleteBtn");
-    deleteBtn.value = ""; 
+    
 
-    showPost.appendChild(displayPost);
-showPost.appendChild(postTitle);
-showPost.appendChild(postContent);
-showPost.appendChild(editBtn);
-showPost.appendChild(deleteBtn);
 }
 
 
 
 bppForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    postTitleError.textContent = "";
+    postContentError.textContent = "";
+
+    const title = postTitle.value.trim ();
+    const content = postContent.value.trim();
+
+    let error = false;
+    switch (true) {
+        case (title === "" && content === "");
+        postTitleError.textContent = "Type a title "
+        postContentError.textContent = "Type content "
+        error = true;
+        break;
+        case (title === ""):
+            postTitleError.textContent = "Type a title"
+            error = true;
+            break;
+            case (content === ""):
+            postContentError.textContent = "Type content"
+            error = true;
+            break;
+
+            
+    }
+    if (error) return;
+    const newPost = {
+        id: Date.now(),
+        title: title, 
+        content: content, 
+        time: new Date().toLocaleTimeString()
+
+    };
+    post.push(newPost);
+    localStorage.setItem("blogContent", JSON.stringify(post));
+    renderPosts();
+    postTitle.value = "";
+    postContent.value = "";
+});
+
+editBtn.addEventListener("click", function () {
+
 })
 
-editBtn.addEventListener("click", function(){
+deleteBtn.addEventListener("click", function () {
 
 })
 
-deleteBtn.addEventListener("click", function(){
-    
-})
+window.onload = function () {
+    const saved = localStorage.getItem("blogContent");
+    switch (true) {
+ case (saved !== null):
+ post = JSON.parse(saved);
+ renderPosts();
+ break;
+ default:
+    post = [];
+    }
+   
+};

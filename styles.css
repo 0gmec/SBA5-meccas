@@ -1,6 +1,6 @@
 /* Anime font style*/
 
-@import url('https://fonts.googleapis.com/css2familty=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 body {
     background-color: #0d0d0d;
@@ -44,7 +44,7 @@ button:hover {
     background-color: #00994d;
 }
 
-.error-messeage {
+.error-message {
     color:red;
 
 }
