@@ -31,8 +31,12 @@ function displayContent() {
 }
 
 function renderPosts(newPost, displayPost) {
-    const displayPost = document.getElementById(displayPost);
-    displayPost.innerHTML = "";
+    const displayBlog = document.getElementById(displayBlog);
+    displayBlog.innerHTML = "";
+
+    for (let i = 0; i < blogStack.length; i++) {
+        const card = blogStack[i];
+    }
 
 newPost.forEach(post => {
     const container = document.createElement("div");
