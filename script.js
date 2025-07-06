@@ -8,7 +8,7 @@ const displayPost = document.getElementById("displayPost");
 const editBtn = document.getElementById("editBtn");
 const deleteBtn = document.getElementById("deleteBtn")
 
-let post = []
+let newPost = []
 
 function displayTitle() {
     const input = document.getElementById("postTitle");
@@ -20,23 +20,28 @@ function displayContent() {
     localStorage.setItem("postContent", input.value);
 }
 
-function showPost() {
-    const displayPost = document.getElementById("displayPost");
-    displayPost.innerHTML = "";
+function renderPosts(newPost, displayPost) {
+    const displayPost = document.getElementById(displayPost);
+    displayPost.innerHTML = "",
 
-    const postTitle = document.getElementById("postTitle");
-    postTitle.value = "";
+newPost.forEach(post => {
+    const container = document.createElement("div");
 
-    const postContent = document.getElementById("postContent");
-    postContent.value = "";
+    const postTitle = document.createElement("h2")
+    postTitle.textContent = post.title;
+    postTitle.appendChild(titleElement);
 
-    const editBtn = document.getElementById("editBtn");
+    const postContent = document.createElement("p");
+    postContent.textContent = post.content;
+    postContent.appendChild(contentElement);
+
+})
+
     
+        
+    }
 
-    const deleteBtn = document.getElementById("deleteBtn");
     
-
-}
 
 
 
@@ -50,7 +55,7 @@ bppForm.addEventListener("submit", function (event) {
 
     let error = false;
     switch (true) {
-        case (title === "" && content === "");
+        case (title === "" && content === ""):
         postTitleError.textContent = "No title displayed "
         postContentError.textContent = "No content displayed "
         error = true;
