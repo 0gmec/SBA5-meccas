@@ -185,7 +185,7 @@ bppForm.addEventListener("submit", function (event) {
     }
 
 
-    //  loal storage 
+    //  local storage 
 
     localStorage.setItem("blogContent", JSON.stringify(postEntry));
     renderPosts();
