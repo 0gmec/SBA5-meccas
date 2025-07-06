@@ -51,16 +51,25 @@ bppForm.addEventListener("submit", function (event) {
     let error = false;
     switch (true) {
         case (title === "" && content === "");
-        postTitleError.textContent = "Type a title "
-        postContentError.textContent = "Type content "
+        postTitleError.textContent = "No title displayed "
+        postContentError.textContent = "No content displayed "
         error = true;
         break;
-        case (title === ""):
-            postTitleError.textContent = "Type a title"
+        
+            case (title === "error" || content === "error"):
+                postTitleError.textContent = "No title displayed"
+            postContentError.textContent = "No content displayed"
             error = true;
             break;
+            
+            case(title.length < 1 ):
+            postTitleError.textContent = "Title displayed needs to be longer"
+            error = true;
+            break;
+
+
             case (content === ""):
-            postContentError.textContent = "Type content"
+            postContentError.textContent = "No content displayed"
             error = true;
             break;
 
