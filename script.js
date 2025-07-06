@@ -8,7 +8,17 @@ const displayPost = document.getElementById("displayPost");
 const editBtn = document.getElementById("editBtn");
 const deleteBtn = document.getElementById("deleteBtn")
 
-let newPost = []
+let newPost = {
+      
+        id: Date.now(),
+        title: title, 
+        content: content, 
+        time: new Date().toLocaleTimeString()
+
+    };
+    newPost.push(newPost);
+
+
 
 function displayTitle() {
     const input = document.getElementById("postTitle");
@@ -22,20 +32,36 @@ function displayContent() {
 
 function renderPosts(newPost, displayPost) {
     const displayPost = document.getElementById(displayPost);
-    displayPost.innerHTML = "",
+    displayPost.innerHTML = "";
 
 newPost.forEach(post => {
     const container = document.createElement("div");
 
     const postTitle = document.createElement("h2")
     postTitle.textContent = post.title;
-    postTitle.appendChild(titleElement);
+    postTitle.appendChild(postTitle);
 
     const postContent = document.createElement("p");
     postContent.textContent = post.content;
-    postContent.appendChild(contentElement);
+    postContent.appendChild(postContent);
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit Post"
+
+    editBtn.addEventListener("click", function () {
 
 })
+container.appendChild(editBtn);
+
+const deleteBtn = document.createElement("button")
+deleteBtn.textContent = "Delete Post";
+
+deleteBtn.addEventListener("click", function () {
+
+})
+container.appendChild(remove);
+})
+displayPost.appendChild(container);
 
     
         
@@ -95,23 +121,17 @@ bppForm.addEventListener("submit", function (event) {
     postContent.value = "";
 });
 
-editBtn.addEventListener("click", function () {
 
-})
-
-deleteBtn.addEventListener("click", function () {
-
-})
 
 window.onload = function () {
     const saved = localStorage.getItem("blogContent");
     switch (true) {
  case (saved !== null):
- post = JSON.parse(saved);
+ newPost = JSON.parse(saved);
  renderPosts();
  break;
  default:
-    post = [];
+    newPost = [];
     }
    
 };
