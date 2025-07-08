@@ -48,7 +48,7 @@ function renderPosts() {
             const postId = Number(this.dataset.id)
             let editIndex = -1;
 
-            //post finding the edit 
+            // 
             for (let i = 0; i < postEntry.length; i++) {
                 switch (true) {
                     case (postEntry[i].id === postId):

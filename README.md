@@ -27,7 +27,7 @@ Data is stored and retrieved from localStorage.
 Posts include an Edit button that loads content back into the form. Once edited, the post replaces the original and updates its timestamp.
 
 ### Post Deletion
-Each post includes a **Delete** button. Deletion removes the post from both the UI and `localStorage`.
+Each post includes a **Delete** button. Deletion removes the post from both the UI and localStorage.
 
 ---
 
@@ -37,20 +37,23 @@ Each post includes a **Delete** button. Deletion removes the post from both the 
 **Validation Flow Can Be Inconsistent:**  
   The error messages in the form sometimes show at the wrong times or stack awkwardly, especially when switching quickly between actions like edit and submit. This is due to how validation and DOM updates are handled in the same cycle.
 
-- **Use of switch (true) Made Debugging Harder:**  
+ **Use of switch (true) Made Debugging Harder:**  
 Although switch(true) blocks allowed for grouped condition checks, they became harder to debug when reused across event handlers.
 It was easy to miss which condition actually triggered without proper logging.
 
 
-- **No Form Reset on Failed Validation:**  
+ **No Form Reset on Failed Validation:**  
   If the form submission fails validation, the user input is preserved but error states aren’t always cleared if you fix only one field, which may confuse users.
 
-- **Global Variables and DOM:**  
+ **Global Variables and DOM:**  
   Variables like editing Post Id and postEntry are globally scoped and tied directly to DOM elements, making the logic harder to scale or refactor.
 
-- **Multiple Buttons but Only One is Functional:**  
+ **Multiple Buttons but Only One is Functional:**  
   Buttons like #editBtn and deleteBtn exist in the HTML form but are non-functional and redundant since the real edit/delete actions are tied to dynamically created buttons in the rendered posts.
-  This might confuse users or developers reviewing the code.
+  This might confuse users or developers reviewing the code. 
+
+  **Display of time and date8**
+  Unsure why time and date are displayed after its in localStorage. unaware of error and could not fixed, based off of examples it wasnt clear how to display, issue that im still solving, belived it has to do with the poustEntry where it should be placed inside the function instead.
 
 
 
