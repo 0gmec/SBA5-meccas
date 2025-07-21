@@ -70,6 +70,9 @@ It was easy to miss which condition actually triggered without proper logging.
 - [MDN – addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 - [JavaScript.info – Event Delegation](https://javascript.info/event-delegation)
 - [MDN – Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Youtube – Rendering Post](https://www.youtube.com/watch?v=6_IjklVSQAA)
+- [StackOverflow – Delete](https://stackoverflow.com/questions/54565161/javascript-todo-list-delete-and-complete-buttons)
+- [GeekforGeeks – Tutorial](https://www.geeksforgeeks.org/javascript/blog-website-using-javascript/)
 
 ---
 
